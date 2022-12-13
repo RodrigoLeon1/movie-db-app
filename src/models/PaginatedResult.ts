@@ -3,4 +3,10 @@ export interface PaginatedResult<T> {
   results: T;
   total_pages: number;
   total_results: number;
+  dates?: Dates;
+}
+
+interface Dates {
+  maximum: string;
+  minimum: string;
 }

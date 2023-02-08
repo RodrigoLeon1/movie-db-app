@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { Grid, Text } from '@chakra-ui/react';
 import { ApiMovie } from '../../models/api/ApiMovie';
 import Card from './Card';
 
@@ -13,13 +12,11 @@ interface Props {
 const CardGrid: FC<Props> = ({ title, movies, columns = 'repeat(5, 1fr)', gap = 6 }) => {
   return (
     <>
-      <Text fontSize="4xl">{title}</Text>
+      {title}
 
-      <Grid templateColumns={columns} gap={gap}>
-        {movies.map((movie) => (
-          <Card movie={movie} />
-        ))}
-      </Grid>
+      {movies.map((movie) => (
+        <Card movie={movie} />
+      ))}
     </>
   );
 };

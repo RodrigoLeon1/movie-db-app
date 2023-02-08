@@ -1,36 +1,30 @@
-import { Box, Container, Flex, Text } from '@chakra-ui/react';
 import { Link, NavLink } from 'react-router-dom';
 import { HeaderRoutes, ROUTES } from '../../utils/router.utils';
-
-import logoSvg from '../../assets/svg/logo.svg';
+import Logo from '../../assets/svg/Logo';
+import Button from '../../components/Button/Button';
 
 const Navbar = () => {
   return (
     <nav>
-      <Box backgroundColor={'#333'} py={5}>
-        <Container maxWidth={'container.xxl'}>
-          <Flex justifyContent="space-between" alignItems={'center'}>
-            <Box>
-              <Link to={ROUTES.HOME}>
-                <Flex alignItems={'center'} gap={4}>
-                  <img src={logoSvg} alt="MovieDB Logo" width={'40px'} />
-                  <Text color={'white'}>MovieDB</Text>
-                </Flex>
-              </Link>
-            </Box>
+      <div className="container mx-auto py-8 px-4">
+        <div className="flex items-center justify-between">
+          <Link to={ROUTES.HOME}>
+            <Logo />
+          </Link>
 
-            <Box>
-              <Flex gap={10}>
-                {HeaderRoutes.map((r) => (
-                  <NavLink key={r.label} to={r.route} style={({ isActive }) => ({ color: isActive ? 'red' : 'white' })}>
-                    {r.label}
-                  </NavLink>
-                ))}
-              </Flex>
-            </Box>
-          </Flex>
-        </Container>
-      </Box>
+          <div className="flex gap-16">
+            {HeaderRoutes.map((r) => (
+              <NavLink key={r.label} to={r.route} className="text-gray-400">
+                {r.label}
+              </NavLink>
+            ))}
+          </div>
+
+          <div>
+            <Button label="Favorites" handleOnClick={() => console.log('Open favorites modal')} />
+          </div>
+        </div>
+      </div>
     </nav>
   );
 };

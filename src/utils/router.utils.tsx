@@ -9,12 +9,16 @@ const Search = lazy(() => import('../pages/Search'));
 export const enum ROUTES {
   HOME = '/',
   SEARCH = '/search',
+  UPCOMING = '/upcoming',
+  POPULAR = '/popular',
+  TOP_SELLERS = '/top-sellers',
 }
 
 export const HeaderRoutes = [
-  { label: 'Home', route: ROUTES.HOME },
-  { label: 'Search', route: ROUTES.SEARCH },
-];
+  { label: 'Upcoming', route: ROUTES.UPCOMING },
+  { label: 'Popular', route: ROUTES.POPULAR },
+  { label: 'Top Sellers', route: ROUTES.TOP_SELLERS },
+] as const;
 
 export const AppRouter = createBrowserRouter([
   {

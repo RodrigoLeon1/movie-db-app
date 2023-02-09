@@ -1,7 +1,10 @@
+import { useState } from 'react';
+import CardGrid from '../components/Card/CardGrid';
+
 const Home = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Home page</h1>
+      <CardGrid title="Upcoming movies" movies={[]} />
     </>
   );
 };

@@ -5,7 +5,7 @@ const Header = () => {
     <header>
       <Navbar />
 
-      <div className="min-h-[75vh] lg:max-w-[50%] container mx-auto flex flex-col items-center justify-center text-center">
+      <div className="min-h-[90vh] lg:max-w-[50%] container mx-auto flex flex-col items-center justify-center text-center">
         <h2 className="text-7xl text-white font-bold leading-[5.5rem] mb-10">
           Get <span className="text-violet-500">Ready</span> to Light Up the Screen!
         </h2>

@@ -1,10 +1,20 @@
-import { useState } from 'react';
-import CardGrid from '../components/Card/CardGrid';
+import MovieCardGrid from '../components/MovieCard/MovieCardGrid';
+import useFetchUpcomingMovies from '../assets/hooks/useFetchUpcomingMovies';
 
 const Home = () => {
+  const { movies = [], isLoading, isError } = useFetchUpcomingMovies();
+
+  if (isLoading) {
+    return <>Loading...</>;
+  }
+
+  if (isError) {
+    return <>Error here</>;
+  }
+
   return (
     <>
-      <CardGrid title="Upcoming movies" movies={[]} />
+      <MovieCardGrid title="Upcoming movies" movies={movies} />
     </>
   );
 };

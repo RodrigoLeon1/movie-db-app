@@ -4,7 +4,7 @@ import { ApiMovie } from '../models/api/ApiMovie';
 
 const baseUrl = `/movie`;
 
-export const getUpcomingMovies = async (): Promise<PaginatedResult<ApiMovie[]>> => {
+export const getUpcomingMovies = async (limit = 20): Promise<PaginatedResult<ApiMovie[]>> => {
   const url = `${baseUrl}/upcoming`;
   const res = await axiosInstance.get<PaginatedResult<ApiMovie[]>>(url);
   return res.data;

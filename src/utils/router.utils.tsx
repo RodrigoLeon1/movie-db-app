@@ -1,14 +1,17 @@
 import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import MovieHeader from '../layout/Header/MovieHeader';
 import Layout from '../layout/Layout';
 
 // Lazy loading of pages
 const Home = lazy(() => import('../pages/Home'));
 const Search = lazy(() => import('../pages/Search'));
+const MovieDetail = lazy(() => import('../pages/movie/MovieDetail'));
 
 export const enum ROUTES {
   HOME = '/',
   SEARCH = '/search',
+  DETAIL = '/movie',
   UPCOMING = '/upcoming',
   POPULAR = '/popular',
   TOP_SELLERS = '/top-sellers',
@@ -26,6 +29,14 @@ export const AppRouter = createBrowserRouter([
     element: (
       <Layout>
         <Home />
+      </Layout>
+    ),
+  },
+  {
+    path: ROUTES.DETAIL + '/:movieId',
+    element: (
+      <Layout defaultHeader={<MovieHeader />}>
+        <MovieDetail />
       </Layout>
     ),
   },

@@ -9,6 +9,8 @@ const movieAdapter = (apiMovie: ApiMovie): Movie => {
     runtime: apiMovie.runtime,
     voteAverage: apiMovie.vote_average,
     posterImg: apiMovie.poster_path,
+    backdropImg: apiMovie.backdrop_path,
+    releaseDate: apiMovie.release_date,
   };
 };
 

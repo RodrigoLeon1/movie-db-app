@@ -5,4 +5,6 @@ export interface Movie {
   runtime: number | string | undefined;
   voteAverage: number;
   posterImg: string;
+  backdropImg?: string;
+  releaseDate?: string;
 }

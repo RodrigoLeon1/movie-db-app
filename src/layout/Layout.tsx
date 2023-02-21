@@ -3,12 +3,13 @@ import Header from './Header/Header';
 
 interface Props {
   children: React.ReactNode;
+  defaultHeader?: React.ReactNode;
 }
 
-const Layout: FC<Props> = ({ children }) => {
+const Layout: FC<Props> = ({ children, defaultHeader = <Header /> }) => {
   return (
     <>
-      <Header />
+      {defaultHeader}
       <main>{children}</main>
       {/* Footer */}
     </>

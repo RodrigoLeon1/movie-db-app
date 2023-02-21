@@ -1,6 +1,5 @@
 import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import MovieHeader from '../layout/Header/MovieHeader';
 import Layout from '../layout/Layout';
 
 // Lazy loading of pages
@@ -35,7 +34,7 @@ export const AppRouter = createBrowserRouter([
   {
     path: ROUTES.DETAIL + '/:movieId',
     element: (
-      <Layout defaultHeader={<MovieHeader />}>
+      <Layout>
         <MovieDetail />
       </Layout>
     ),

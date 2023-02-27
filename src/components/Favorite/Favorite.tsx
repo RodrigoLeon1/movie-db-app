@@ -4,6 +4,7 @@ import Heart from '../../assets/svg/Heart';
 import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../redux/states/favorites';
 import { useSelector } from 'react-redux';
+import { AppStore } from '../../redux/store';
 
 interface Props {
   currentMovie: Movie;
@@ -11,7 +12,7 @@ interface Props {
 
 const Favorite: FC<Props> = ({ currentMovie }) => {
   const dispatch = useDispatch();
-  const favorites = useSelector((store) => store.favorites);
+  const favorites = useSelector((store: AppStore) => store.favorites);
 
   // const test = [...favorites];
 

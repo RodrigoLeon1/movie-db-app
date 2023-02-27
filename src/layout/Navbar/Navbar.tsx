@@ -21,7 +21,7 @@ const Navbar = () => {
           </div>
 
           <div>
-            <Button label="Favorites" handleOnClick={() => console.log('Open favorites modal')} />
+            <Button label="Favorites" url={''} />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
-import movieAdapter from '../../adapters/movie.adapter';
-import { getMovieDetails } from '../../services/movies.service';
+import movieAdapter from '../adapters/movie.adapter';
+import { getMovieDetails } from '../services/movies.service';
 
 const useFetchMovieDetail = (movieId: number) => {
   const queryKey = `MOVIE_DETAIL_${movieId}`;

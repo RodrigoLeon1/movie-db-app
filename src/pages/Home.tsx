@@ -1,5 +1,6 @@
 import MovieCardGrid from '../components/MovieCard/MovieCardGrid';
-import useFetchUpcomingMovies from '../assets/hooks/useFetchUpcomingMovies';
+import useFetchUpcomingMovies from '../hooks/useFetchUpcomingMovies';
+import { ROUTES } from '../utils/router.utils';
 
 const Home = () => {
   const { movies = [], isLoading, isError } = useFetchUpcomingMovies();
@@ -14,7 +15,7 @@ const Home = () => {
 
   return (
     <>
-      <MovieCardGrid title="Upcoming movies" movies={movies} />
+      <MovieCardGrid title="Upcoming movies" movies={movies} limit={4} buttonUrl={ROUTES.UPCOMING} />
     </>
   );
 };

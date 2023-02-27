@@ -1,6 +1,8 @@
 import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layout/Layout';
+import PopularMovies from '../pages/PopularMovies';
+import UpcomingMovies from '../pages/UpcomingMovies';
 
 // Lazy loading of pages
 const Home = lazy(() => import('../pages/Home'));
@@ -34,7 +36,7 @@ export const AppRouter = createBrowserRouter([
   {
     path: ROUTES.DETAIL + '/:movieId',
     element: (
-      <Layout>
+      <Layout hideHeaderContent>
         <MovieDetail />
       </Layout>
     ),
@@ -44,6 +46,22 @@ export const AppRouter = createBrowserRouter([
     element: (
       <Layout>
         <Search />
+      </Layout>
+    ),
+  },
+  {
+    path: ROUTES.UPCOMING,
+    element: (
+      <Layout hideHeaderContent>
+        <UpcomingMovies />
+      </Layout>
+    ),
+  },
+  {
+    path: ROUTES.POPULAR,
+    element: (
+      <Layout hideHeaderContent>
+        <PopularMovies />
       </Layout>
     ),
   },

@@ -4,26 +4,28 @@ import Button from '../Button/Button';
 import MovieCard from './MovieCard';
 
 interface Props {
-  title: string;
   movies: Movie[];
-  columns?: string;
-  gap?: number;
+  title?: string;
+  limit?: number;
+  buttonUrl?: string;
 }
 
-const MovieCardGrid: FC<Props> = ({ title, movies, columns = 'repeat(5, 1fr)', gap = 6 }) => {
+const MovieCardGrid: FC<Props> = ({ title = '', movies, limit = 20, buttonUrl = null }) => {
   return (
     <section className="container mx-auto pb-16">
-      <h2 className="text-center text-3xl font-bold text-white pb-14">{title}</h2>
+      {title && <h2 className="text-center text-3xl font-bold text-white pb-14">{title}</h2>}
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 content-center mb-14">
-        {movies.map((movie) => (
+        {movies.slice(0, limit).map((movie) => (
           <MovieCard movie={movie} key={movie.id} />
         ))}
       </div>
 
-      <div className="flex items-center justify-center">
-        <Button label="View more" handleOnClick={() => console.log('Navigate to list page')} />
-      </div>
+      {buttonUrl && (
+        <div className="flex items-center justify-center">
+          <Button label="View more" url={buttonUrl} />
+        </div>
+      )}
     </section>
   );
 };

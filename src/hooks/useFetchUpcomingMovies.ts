@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
-import movieAdapter from '../../adapters/movie.adapter';
-import { getUpcomingMovies } from '../../services/movies.service';
+import movieAdapter from '../adapters/movie.adapter';
+import { getUpcomingMovies } from '../services/movies.service';
 
 const useFetchUpcomingMovies = () => {
   const queryKey = 'UPCOMING_MOVIES';

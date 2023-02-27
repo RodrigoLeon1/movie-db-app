@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
-import useFetchMovieDetail from '../../assets/hooks/useFetchMovieDetail';
+import useFetchMovieDetail from '../../hooks/useFetchMovieDetail';
 import Favorite from '../../components/Favorite/Favorite';
 import { getImageUrl } from '../../utils/image.utils';
 
@@ -26,7 +26,7 @@ const MovieDetail: FC<Props> = ({}) => {
         <div>
           <div className="flex items-center gap-5 mb-10">
             <h1 className="text-3xl font-bold text-white pb-1">{movie.title}</h1>
-            <Favorite />
+            <Favorite currentMovie={movie} />
           </div>
 
           <p className="text-gray-400">{movie.overview}</p>

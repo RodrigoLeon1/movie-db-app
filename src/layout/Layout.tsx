@@ -3,13 +3,13 @@ import Header from './Header/Header';
 
 interface Props {
   children: React.ReactNode;
-  defaultHeader?: React.ReactNode;
+  hideHeaderContent?: boolean;
 }
 
-const Layout: FC<Props> = ({ children, defaultHeader = <Header /> }) => {
+const Layout: FC<Props> = ({ children, hideHeaderContent = false }) => {
   return (
     <>
-      {defaultHeader}
+      <Header hideContent={hideHeaderContent} />
       <main>{children}</main>
       {/* Footer */}
     </>

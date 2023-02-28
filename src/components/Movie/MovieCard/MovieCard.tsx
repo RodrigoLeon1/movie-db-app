@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { getImageUrl, IMG_PLACEHOLDER } from '../../utils/image.utils';
-import { ROUTES } from '../../utils/router.utils';
-import { Movie } from '../../models/Movie';
-import Average from '../Average/Average';
+import { getImageUrl, IMG_PLACEHOLDER } from '../../../utils/image.utils';
+import { ROUTES } from '../../../utils/router.utils';
+import { Movie } from '../../../models/Movie';
+import Average from '../../Average/Average';
 
 interface Props {
   movie: Movie;

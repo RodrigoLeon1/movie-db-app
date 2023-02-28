@@ -52,7 +52,7 @@ export const AppRouter = createBrowserRouter([
   {
     path: ROUTES.UPCOMING,
     element: (
-      <Layout hideHeaderContent>
+      <Layout hideHeaderContent classNames="mt-10">
         <UpcomingMovies />
       </Layout>
     ),
@@ -60,7 +60,7 @@ export const AppRouter = createBrowserRouter([
   {
     path: ROUTES.POPULAR,
     element: (
-      <Layout hideHeaderContent>
+      <Layout hideHeaderContent classNames="mt-10">
         <PopularMovies />
       </Layout>
     ),

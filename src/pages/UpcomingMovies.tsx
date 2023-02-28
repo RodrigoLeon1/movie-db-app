@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import MovieCardGrid from '../components/MovieCard/MovieCardGrid';
+import MovieCardGrid from '../components/Movie/MovieCard/MovieCardGrid';
 import useFetchUpcomingMovies from '../hooks/useFetchUpcomingMovies';
 
 const UpcomingMovies: FC = () => {

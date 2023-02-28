@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Movie } from '../../models/Movie';
-import Button from '../Button/Button';
+import { Movie } from '../../../models/Movie';
+import Button from '../../Button/Button';
 import MovieCard from './MovieCard';
 
 interface Props {

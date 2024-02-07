@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import favoriteSlice from './states/favorites';
+import { Movie } from '../models/Movie';
 
 export interface AppStore {
-  favorites: any;
+  favorites: Movie[];
 }
 
 export default configureStore<AppStore>({

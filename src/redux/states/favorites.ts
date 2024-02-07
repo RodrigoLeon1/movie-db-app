@@ -1,15 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Favorite } from '../../models/Favorite';
 import { Movie } from '../../models/Movie';
 import { persistValueInLocalStorage, removeKeyInLocalStorage } from '../../utils/localstorage.util';
 
 export const FAVORITE_KEY = 'favorites';
 
-export const EmptyFavoriteState: { favorites: Movie[] } = {
+interface FavoriteState {
+  favorites: Movie[];
+}
+
+export const EmptyFavoriteState: FavoriteState = {
   favorites: [],
 };
 
-const initializeFavorites: { favorites: Movie[] } = localStorage.getItem(FAVORITE_KEY)
+const initializeFavorites: FavoriteState = localStorage.getItem(FAVORITE_KEY)
   ? JSON.parse(localStorage.getItem(FAVORITE_KEY) as string)
   : EmptyFavoriteState;
 
@@ -30,11 +33,6 @@ export const favoriteSlice = createSlice({
       persistValueInLocalStorage<{ favorites: Movie[] }>(FAVORITE_KEY, currentFavorites);
       return currentFavorites;
     },
-
-    // exist: (state, action) => {
-    //   const movie: Movie = action.payload;
-    //   return state.favorites.find((m: Movie) => m.id === movie.id);
-    // },
 
     resetFavorites: () => {
       removeKeyInLocalStorage(FAVORITE_KEY);

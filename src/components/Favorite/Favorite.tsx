@@ -14,11 +14,9 @@ const Favorite: FC<Props> = ({ currentMovie }) => {
   const dispatch = useDispatch();
   const favorites = useSelector((store: AppStore) => store.favorites);
 
-  // const test = [...favorites];
+  const isMovieAlreadyAdded = [...favorites].find((m) => m.id === currentMovie.id);
 
-  // const isMovieAlreadyAdded = favorites?.find((m) => m.id === currentMovie.id);
-
-  console.log(favorites);
+  console.log(favorites, isMovieAlreadyAdded);
 
   const handleToggleFavorite = () => {
     dispatch(toggleFavorite(currentMovie));
